@@ -28,7 +28,8 @@ public class Script_Enemy : MonoBehaviour
                 float dist = Vector3.Distance(player.position, transform.position);
                 if (dist < range)
                 {
-                    Instantiate(projectile);
+                    Instantiate(projectile, transform.position, transform.rotation);
+
                     elapsedTime = 0;
                 }
             }

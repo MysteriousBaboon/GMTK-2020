@@ -61,15 +61,13 @@ public class Script_Car : MonoBehaviour
             {
                 closest = go;
                 distance = dist;
-                Instantiate(arrow, transform.position, transform.rotation);
+                GameObject f = Instantiate(arrow, transform.position, transform.rotation);
+                print(f);
+                f.GetComponent<Script_Arrow>().pos = closest.transform.position;
+
             }
         }
-        /*
-        if (closest != null)
-        {
-            closest.gameObject.GetComponent<Script_NPC>().Captured(closest);
-        }
-        */
+
         return null;
 
     }
