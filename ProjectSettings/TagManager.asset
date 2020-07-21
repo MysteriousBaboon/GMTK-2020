@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Converted
+  - Free
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Character
   - 
   - 
   - 
@@ -40,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Circle
+    uniqueID: 2933511911
+    locked: 0
+  - name: Npc
+    uniqueID: 1821690037
+    locked: 0
+  - name: Player
+    uniqueID: 2648248727
     locked: 0
