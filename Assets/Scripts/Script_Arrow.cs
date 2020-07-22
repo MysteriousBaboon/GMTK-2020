@@ -37,6 +37,7 @@ public class Script_Arrow : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
+            collision.gameObject.GetComponent<Script_Enemy>().life -= 1;
             Time.timeScale = 1f;
             Destroy(this.gameObject);
         }

@@ -11,6 +11,8 @@ public class Script_Enemy : MonoBehaviour
     public float elapsedTime = 0;
     public float timeLimit;
 
+    public int life = 1;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,8 @@ public class Script_Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(life <= 0) Destroy(this.gameObject);
+
         if (elapsedTime >= timeLimit)
         {
             if (player)

@@ -30,7 +30,7 @@ public class Script_Car : MonoBehaviour
     {
         if (elapsedTime >= timeLimit)
         {
-            if(Input.GetAxis("Control") != 0) TargetClosest();
+            if(Input.GetAxis("Control") != 0 && numberControl > 0) TargetClosest();
         }
         if (elapsedTime <= timeLimit) elapsedTime += Time.deltaTime;
 
@@ -80,6 +80,7 @@ public class Script_Car : MonoBehaviour
                 GameObject f = Instantiate(arrow, transform.position, transform.rotation);
                 f.GetComponent<Script_Arrow>().pos = go.transform.position;
                 elapsedTime = 0;
+                numberControl -= 1;
                 break;
 
             }
