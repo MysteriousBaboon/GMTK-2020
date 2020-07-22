@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Script_UI : MonoBehaviour
 {
     public string levelName;
-    public float radiusAugmentation = 0;
     private GameObject go;
 
     public void GotoScene()
@@ -18,12 +17,6 @@ public class Script_UI : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
-    }
-
-    public void Upradius()
-    {
-        go = GameObject.FindGameObjectsWithTag("Player")[0];
-        go.gameObject.GetComponent<Script_Player>().radius += radiusAugmentation;
     }
 
 

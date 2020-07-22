@@ -36,4 +36,6 @@ public class Script_Enemy : MonoBehaviour
         }
         if (elapsedTime <= timeLimit) elapsedTime += Time.deltaTime;
     }
+
+
 }

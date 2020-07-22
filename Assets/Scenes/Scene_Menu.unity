@@ -433,6 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: Scene_Credits
+  radiusAugmentation: 0
 --- !u!114 &1242526724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,7 +657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a9734e8b2e1c345ae72b8522245857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Scene_Level
+  levelName: Scene_LevelSelection
+  radiusAugmentation: 0
 --- !u!114 &1645151387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,6 +803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: Scene_Credits
+  radiusAugmentation: 0
 --- !u!114 &1736504760
 MonoBehaviour:
   m_ObjectHideFlags: 0

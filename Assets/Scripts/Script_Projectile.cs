@@ -24,7 +24,6 @@ public class Script_Projectile : MonoBehaviour
         speed *= speedDegenerescence;
 
 
-
         transform.position = Vector3.MoveTowards(transform.position, pos , speed);
     }
 }

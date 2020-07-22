@@ -5,10 +5,16 @@ using UnityEngine;
 public class Script_Car : MonoBehaviour
 {
     public float speed;
-    public GameObject arrow;
+    public float rotateSpeed;
+
     public float radius;
     public float elapsedTime = 0;
     public float timeLimit;
+
+    public GameObject arrow;
+
+    public int life;
+    public int numberControl;
 
 
 
@@ -24,28 +30,39 @@ public class Script_Car : MonoBehaviour
     {
         if (elapsedTime >= timeLimit)
         {
-            FindClosest();
-            elapsedTime = 0;
-
+            if(Input.GetAxis("Control") != 0) TargetClosest();
         }
         if (elapsedTime <= timeLimit) elapsedTime += Time.deltaTime;
+
+        transform.position += transform.up * Time.deltaTime * speed;
+
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        if (horizontalInput > 0)
+        {
+            transform.Rotate(Vector3.back * rotateSpeed * Time.deltaTime);
+
+        }
+        else if (horizontalInput < 0)
+        {
+            transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime);
+        }
     }
 
     void FixedUpdate()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-        transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * speed * Time.deltaTime);
+
+       
     }
 
 
 
 
-    public GameObject FindClosest()
+    public void TargetClosest()
     {
         GameObject[] gos;
         gos = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closest = null;
 
         float distance = Mathf.Infinity;
 
@@ -59,16 +76,14 @@ public class Script_Car : MonoBehaviour
 
             if (dist < distance && dist < radius)
             {
-                closest = go;
                 distance = dist;
                 GameObject f = Instantiate(arrow, transform.position, transform.rotation);
-                print(f);
-                f.GetComponent<Script_Arrow>().pos = closest.transform.position;
+                f.GetComponent<Script_Arrow>().pos = go.transform.position;
+                elapsedTime = 0;
+                break;
 
             }
         }
-
-        return null;
 
     }
 }
