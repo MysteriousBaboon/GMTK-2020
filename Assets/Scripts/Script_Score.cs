@@ -29,6 +29,8 @@ public class Script_Score : MonoBehaviour
         GameObject[] gos = GameObject.FindGameObjectsWithTag("Enemy");
         enemies = gos.Length;
         score.text = enemies.ToString();
+        if (enemies == 0) this.gameObject.GetComponent<Script_UI>().GotoScene();
+
         }
         else
         {

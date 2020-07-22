@@ -15,6 +15,7 @@ public class Script_Projectile : MonoBehaviour
 
         gos = GameObject.FindGameObjectsWithTag("Character");
         pos = gos[0].transform.position;
+        transform.right = pos - transform.position;
     }
 
     // Update is called once per frame
@@ -25,5 +26,16 @@ public class Script_Projectile : MonoBehaviour
 
 
         transform.position = Vector3.MoveTowards(transform.position, pos , speed);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.tag == "Character")
+        {
+            collision.gameObject.GetComponent<Script_Car>().malusControl += 5;
+            Time.timeScale = 1f;
+            Destroy(this.gameObject);
+        }
     }
 }

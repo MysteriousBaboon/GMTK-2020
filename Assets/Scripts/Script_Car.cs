@@ -15,6 +15,7 @@ public class Script_Car : MonoBehaviour
 
     public int life;
     public int numberControl;
+    public int malusControl = 0;
 
 
 
@@ -49,14 +50,6 @@ public class Script_Car : MonoBehaviour
             transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime);
         }
     }
-
-    void FixedUpdate()
-    {
-
-       
-    }
-
-
 
 
     public void TargetClosest()

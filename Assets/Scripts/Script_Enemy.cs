@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Script_Enemy : MonoBehaviour
 {
-    public Transform player;
     public GameObject projectile;
  
     public float range;
@@ -25,18 +24,19 @@ public class Script_Enemy : MonoBehaviour
     {
         if(life <= 0) Destroy(this.gameObject);
 
+
         if (elapsedTime >= timeLimit)
         {
-            if (player)
-            {
-                float dist = Vector3.Distance(player.position, transform.position);
-                if (dist < range)
-                {
-                    Instantiate(projectile, transform.position, transform.rotation);
+            GameObject[] f = GameObject.FindGameObjectsWithTag("Character");
 
-                    elapsedTime = 0;
-                }
+            float dist = Vector3.Distance(f[0].transform.position, transform.position);
+            if (dist < range)
+            {
+                Instantiate(projectile, transform.position, transform.rotation);
+            
+                elapsedTime = 0;
             }
+            
         }
         if (elapsedTime <= timeLimit) elapsedTime += Time.deltaTime;
     }
