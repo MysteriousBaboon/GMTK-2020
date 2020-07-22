@@ -152,7 +152,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 954330979}
   camera: {fileID: 1729187556}
-  malusLevel: 0a00000014000000190000001e00000023000000
+  firstLevel: 0
+  secondLevel: 20
+  thirdLevel: 30
+  forthLevel: 40
+  fifthLevel: 50
 --- !u!4 &229364664
 Transform:
   m_ObjectHideFlags: 0
