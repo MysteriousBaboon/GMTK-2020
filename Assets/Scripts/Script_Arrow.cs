@@ -19,18 +19,22 @@ public class Script_Arrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(slowMo > Vector3.Distance(pos, transform.position))Time.timeScale = 0.20f;
+        if(slowMo > Vector3.Distance(pos, transform.position))Time.timeScale = 0.5f;
         if (speed < 0.005 || transform.position == pos)
         {
             Time.timeScale = 1f;
             Destroy(this.gameObject);
         }
             
+
+    }
+
+    void FixedUpdate()
+    {
         speed *= speedDegenerescence;
 
         transform.position = Vector3.MoveTowards(transform.position, pos, speed);
     }
-
 
     void OnCollisionEnter2D(Collision2D collision)
     {
