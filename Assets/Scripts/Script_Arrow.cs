@@ -19,7 +19,7 @@ public class Script_Arrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(slowMo > Vector3.Distance(pos, transform.position))Time.timeScale = 0.25f;
+        if(slowMo > Vector3.Distance(pos, transform.position))Time.timeScale = 0.20f;
         if (speed < 0.005 || transform.position == pos)
         {
             Time.timeScale = 1f;

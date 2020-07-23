@@ -13,7 +13,6 @@ public class Script_Car : MonoBehaviour
 
     public GameObject arrow;
 
-    public int life;
     public int numberControl;
     public int malusControl = 0;
 
