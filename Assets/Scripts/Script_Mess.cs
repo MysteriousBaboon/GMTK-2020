@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class Script_Mess : MonoBehaviour
 {
@@ -30,7 +33,7 @@ public class Script_Mess : MonoBehaviour
         mess = player.GetComponent<Script_Car>().malusControl;
         SpriteRenderer spr = player.GetComponent<SpriteRenderer>();
 
-        if (mess > fifthLevel) print("max");
+        if (mess > fifthLevel) SceneManager.LoadScene("Scene_GameOver");
         else if (mess > forthLevel)
         {
             playerAnimator.SetBool("fifthStage", true);
