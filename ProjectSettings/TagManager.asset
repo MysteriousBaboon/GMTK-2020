@@ -8,6 +8,7 @@ TagManager:
   - Character
   - Arrow
   - Free
+  - Wall
   layers:
   - Default
   - TransparentFX

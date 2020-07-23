@@ -19,12 +19,15 @@ public class Script_Car : MonoBehaviour
 
 
 
-    // Start is called before the first frame update
-    void Start()
+    void OnCollisionEnter2D(Collision2D collision)
     {
 
+        if (collision.gameObject.tag == "Wall")
+        {
+            malusControl += 5;
+            this.gameObject.transform.position = new Vector3(0, 0, -1);
+        }
     }
-
 
     // Update is called once per frame
     void Update()
