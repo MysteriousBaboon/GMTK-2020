@@ -15,6 +15,8 @@ public class Script_Mess : MonoBehaviour
     public int forthLevel; 
     public int fifthLevel;
 
+    public Animator playerAnimator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,10 +31,22 @@ public class Script_Mess : MonoBehaviour
         SpriteRenderer spr = player.GetComponent<SpriteRenderer>();
 
         if (mess > fifthLevel) print("max");
-        else if (mess > forthLevel) print("4");
-        else if (mess > thirdLevel) spr.color = Color.green;
-        else if (mess > secondLevel) spr.color = Color.red;
-        else if (mess > firstLevel) spr.color = Color.blue;
+        else if (mess > forthLevel)
+        {
+            playerAnimator.SetBool("fifthStage", true);
+        }
+        else if (mess > thirdLevel)
+        {
+            playerAnimator.SetBool("fourthStage", true);
+        }
+        else if (mess > secondLevel)
+        {
+            playerAnimator.SetBool("thirdStage", true);
+        }
+        else if (mess > firstLevel)
+        {
+            playerAnimator.SetBool("secondStage", true);
+        }
 
 
 
